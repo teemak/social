@@ -1,0 +1,9 @@
+body {
+	background: gray;
+	font-family: "Nunito"
+}
+
+ul {
+	display: flex;
+	list-style: none;
+}

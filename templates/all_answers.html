@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>ALL ANSWERS API</h2>
+<ul>
+		{% for item in query %}
+			<li>{{ item.answer }}</li>
+		{% endfor %}
+</ul>
+{% endblock %}
+

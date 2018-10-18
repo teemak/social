@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+	<h2>{{query.question}}</h2>
+	<ul>
+	{% for answer in query.answers %}
+		<li>{{ answer }}</li>
+	{% endfor %}
+	</ul>
+	<form action="{{ url_for('answer_question') }}" method="POST">
+			{{ form.hidden_tag() }}
+			{{ form.question_id }}
+			{{ form.answer.label }}
+			{{ form.answer }}
+			{{ form.submit }}
+	</form>
+
+{% endblock %}
