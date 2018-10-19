@@ -1,16 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
-	<h2>{{query.question}}</h2>
-	<ul>
+	<h2 class="question-title">{{query.question}}</h2>
+	<ul class="question-answers">
 	{% for answer in query.answers %}
-		<li>{{ answer }}</li>
+		<li class="question-answer">
+				<p>{{ answer }} by Mrs. Calculus</p>
+				<p><i class="fa fa-coffee fa-fw"></i>BEST ANSWER</p>
+				<p>SCORE: 3</p>
+				<button>AWARD POINT</button>
+
+		</li>
 	{% endfor %}
 	</ul>
-	<form action="{{ url_for('answer_question') }}" method="POST">
+	<form class="form-answer" action="{{ url_for('answer_question') }}" method="POST">
 			{{ form.hidden_tag() }}
 			{{ form.question_id }}
-			{{ form.answer.label }}
-			{{ form.answer }}
+			<p>{{ form.answer.label }}</p>
+			<p>{{ form.answer }}</p>
 			{{ form.submit }}
 	</form>
 

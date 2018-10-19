@@ -1,17 +1,123 @@
 <!DOCTYPE html>
-<html>
 <head>
 		<title>Cimanim</title>
 		<link href="https://fonts.googleapis.com/css?family=Nunito|Raleway" rel="stylesheet"> 
 		<link href="{{ url_for('static', filename='styles.css') }}" rel="sylesheet">
+		<script src="https://use.fontawesome.com/96e6eda1b2.js"></script>
+<style>
+	body {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+		font-family: 'Nunito';
+		overflow-x: hidden;
+	}
+	.nav-bar {
+		position: fixed;
+		top: 0;
+		right: 30px;
+		list-style: none;
+		display: flex;
+		justify-content: flex-end;
+	}
+	.nav-bar__item {
+		margin-left: 30px;
+	}
+	a {
+		text-decoration: none;
+	}
+	.question-title {
+		margin-top: 50px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.question-container {
+		width: 100%;
+		margin: 50px;
+	}
+	.question-link {
+		padding: 5px;
+		border-radius: 5px;
+		border: 2px solid black;
+		color: black;
+		background: lightsalmon;
+	}
+	.question-answers {
+		list-style: none;		
+	}
+	.question-answer {
+		padding: 5px;		
+	}
+	.form-answer {
+		width: 50%;
+		margin: 0 auto;
+		border: 2px solid cyan;
+	}
+	.tags-ul {
+		list-style: none;
+		display: flex;
+	}
+	.tags-li {
+		margin-left: 10px;	
+	}
+	.fa {
+		color: magenta;
+	}
+	.fa-star {
+		color: black;
+		background: yellow;
+		border: 2px solid black;
+		border-radius: 10px;
+		margin-left: 5px;
+	}
+	.cta, .increase {
+		border-radius: 10px;
+		background: firebrick;
+		color: white;
+		margin-left: 50px;
+		padding: 5px
+	}
+	.increase {
+		background: cyan;
+		margin-right: 10px;
+		width: 70px;
+		color: black;
+		border: 2px solid black;
+	}
+	.points {
+		display: inline;
+		margin-left: 55px;
+	}
+</style>
 </head>
 <body>
-		<ul class="nav-bar">
-			<li><a href="{{ url_for('index') }}">Home</a></li>
-			<li><a href="{{ url_for('add_question') }}">Ask A Question</a></li>
-		</ul>
+	<ul class="nav-bar">
+		<li class="nav-bar__item">
+			<a href="{{ url_for('index') }}">
+				<i class="fa fa-home fa-fw"></i>
+				Home
+			</a>
+		</li>
+		<li class="nav-bar__item">
+			<a href="{{ url_for('add_question') }}">
+				<i class="fa fa-question-circle fa-fw" aria-hidden="true"></i>&nbsp;	
+				Ask A Question
+			</a>
+		</li>
+		<li class="nav-bar__item">
+			<a href="{{ url_for('add_question') }}">
+				<i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>&nbsp;	
+				Login
+			</a>
+		</li>
+		<li class="nav-bar__item">
+			<a href="{{ url_for('get_account') }}">
+				<i class="fa fa-trophy fa-fw" aria-hidden="true"></i>&nbsp;	
+				Account
+			</a>
+		</li>
+	</ul>
 		{% block content %}
 		{% endblock %}
-		<script src="{{ url_for('static', filename='app.js') }}"></script>
+	<script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
-</html>

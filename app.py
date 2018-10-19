@@ -80,5 +80,10 @@ def all_answers():
     query = Answer.query.all()
     return render_template('all_answers.html', query=query)
 
+@app.route('/account/')
+def get_account():
+    return render_template('account.html')
+
+
 if __name__ == "__main__":
     app.run()
