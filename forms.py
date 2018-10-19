@@ -10,6 +10,7 @@ class LoginForm(FlaskForm):
 #FORM to pass data
 class QuestionForm(FlaskForm):
     question = StringField('What is your question?', validators=[DataRequired()])
+    score = HiddenField('points')
     submit = SubmitField('Submit Question')
 
 class AnswerForm(FlaskForm):

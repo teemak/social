@@ -5,49 +5,109 @@
 		<link href="{{ url_for('static', filename='styles.css') }}" rel="sylesheet">
 		<script src="https://use.fontawesome.com/96e6eda1b2.js"></script>
 <style>
-	body {
+	:root {
+		--color-primary: #009FFF;
+		--color-primary-light: #0CCFE8;
+		--color-primary-lightest: #0DFFD8;
+		--color-primary-dark: #0C5BE8;
+		--color-primary-darkest: #0D24FF;
+		--color-secondary: #FF9F4B;
+		--color-secondary-light: #E87138;
+		--color-secondary-dark: #FF603E;
+	}
+	body, ul, li, a, button {
 		padding: 0;
 		margin: 0;
+	}
+	body {
 		box-sizing: border-box;
 		font-family: 'Nunito';
 		overflow-x: hidden;
+		background: #306efe linear-gradient(120deg, #30cde2 0, #306efe 100%) no-repeat;
+		color: white;
 	}
 	.nav-bar {
 		position: fixed;
-		top: 0;
-		right: 30px;
+		margin: 0;
+		height: 50px;
+		width: 100%;
+		background: linear-gradient(var(--color-primary), var(--color-primary-darkest));	
 		list-style: none;
 		display: flex;
-		justify-content: flex-end;
-	}
-	.nav-bar__item {
-		margin-left: 30px;
+		justify-content: space-evenly;
+		align-items: center;
+		text-transform: uppercase;
 	}
 	a {
 		text-decoration: none;
+		color: white;
+		transition: .5s;
 	}
-	.question-title {
-		margin-top: 50px;
+	a:hover {
+		color: black;
+	}
+	.fa {
+		color: var(--color-primary-lightest);
+	}
+	.main-title {
+		margin-top: 100px;
 		text-align: center;
 		text-transform: uppercase;
+		color: lightblue;
+		cursor: pointer;
+		transition: .5s;
 	}
-	.question-container {
+	.main-title:hover {
+		transform: scale(1.2);
+	}
+	.active {
+		color: white;
+	}
+	.questions-container {
 		width: 100%;
-		margin: 50px;
+		height: 100%;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		flex-wrap: wrap;
 	}
-	.question-link {
-		padding: 5px;
+	.card-container {
+		border: 1px solid black;
 		border-radius: 5px;
-		border: 2px solid black;
+		height: 400px;
+		width: 20%;
+		margin: 10px;
+		margin-top: 50px;
+		overflow: hidden;
+		background: linear-gradient(var(--color-secondary-light), var(--color-secondary));
+	}
+	.question {
+		height: 30%;
+		background: linear-gradient(135deg, lightslategray, white);
+		margin: 0;
+		padding: 10px;
+		text-overflow: ellipsis;
+		border-bottom: 1px solid black;
 		color: black;
-		background: lightsalmon;
 	}
-	.question-answers {
-		list-style: none;		
+	.points {
+		text-align: center;
 	}
-	.question-answer {
-		padding: 5px;		
+	.cta-row {
+		padding: 15px;
+		display: flex;
+		justify-content: space-evenly;
 	}
+	.answer-button {
+		background: green;
+		border-radius: 50px;
+	}
+	.tags-row {
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+	}
+
 	.form-answer {
 		width: 50%;
 		margin: 0 auto;
@@ -59,16 +119,6 @@
 	}
 	.tags-li {
 		margin-left: 10px;	
-	}
-	.fa {
-		color: magenta;
-	}
-	.fa-star {
-		color: black;
-		background: yellow;
-		border: 2px solid black;
-		border-radius: 10px;
-		margin-left: 5px;
 	}
 	.cta, .increase {
 		border-radius: 10px;
@@ -83,10 +133,6 @@
 		width: 70px;
 		color: black;
 		border: 2px solid black;
-	}
-	.points {
-		display: inline;
-		margin-left: 55px;
 	}
 	.form-container {
 		display: flex;

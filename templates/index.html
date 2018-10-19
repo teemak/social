@@ -1,22 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="query-questions">
-	<h2 class="question-title">Top Questions</h2>
-	<h2 class="question-title">Recent Questions</h2>
-	<h2 class="question-title">Your Subject Questions</h2>
+	<h2 class="main-title active">Most Points</h2>
+	<h2 class="main-title">Recent</h2>
+	<h2 class="main-title">Your Subject</h2>
 </div>
-	{% for item in questions %}
-	<p class="question-container">
-		<a class="question-link"href="{{ url_for('get_question', id=item.id) }}">{{item.question}}</a>
-		<span><button class="cta">ANSWER</button></span>
-		<span><p class="points">POINTS: 10<i class="fa fa-star fa-fw"></i></p>
-				<i class="fa fa-thumbs-up fa-fw increase">ADD POINTS</i>
-		</span>
-		<ul class="tags-ul">
-				<li class="tags-li"><i class="fa fa-angellist fa-fw"></i>Math</li>
-				<li class="tags-li"><i class="fa fa-superpowers fa-fw"></i>Algebra</li>
-				<li class="tags-li"><i class="fa fa-anchor fa-fw"></i>Grade 10</li>
-		</ul>
-	</p>
-	{% endfor %}
+	<div class="questions-container">
+		{% for item in questions %}
+		<div class="card-container">
+			<h4 class="question">{{ item.question }}</h4>
+			<div class="card-meta">
+				<p class="points">POINTS: $44</p>
+				<div class="cta-row">
+					<i class="fa fa-thumbs-up fa-fw fa-4x"></i>
+					<button class="answer-button">ANSWER</button>
+				</div>
+				<div class="tags-row">
+						<p><i class="fa fa-star fa-fw"></i>MATHEMATICS</p>
+						<p><i class="fa fa-star fa-fw"></i>ALGEBRA</p>
+						<p><i class="fa fa-star fa-fw"></i>GRADE 10</p>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
 {% endblock %}
