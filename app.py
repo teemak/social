@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect
 import psycopg2
 from flask_sqlalchemy import SQLAlchemy
-from forms import QuestionForm, AnswerForm
+from forms import QuestionForm, AnswerForm, LoginForm
 from config import url
 
 app = Flask(__name__)
@@ -84,6 +84,18 @@ def all_answers():
 def get_account():
     return render_template('account.html')
 
+@app.route('/login')
+def login():
+    form = LoginForm()
+    return render_template('login.html', form=form)
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
+@app.route('/leaderboard')
+def leaderboard():
+    return render_template('leaderboard.html')
 
 if __name__ == "__main__":
     app.run()

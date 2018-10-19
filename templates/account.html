@@ -1,4 +1,36 @@
 {% extends 'base.html' %}
 {% block content %}
-	<h1>YOUR Account</h1>
+	<h2 class="question-title">YOUR Account</h2>
+	<div class="account-container">
+		<div class="avatar-row">
+				<img src="{{ url_for('static', filename='1.jpeg')}}" class="avatar-img"></img>
+			<p class="avatar-username">UserName</p>
+		</div>
+
+		<p>YOUR POINTS: <i class="fa fa-university fa-fw"></i>1,000,000</p>
+		<p>
+			<i class="fa fa-trophy fa-fw"></i>
+				TROPHIES
+			<i class="fa fa-trophy fa-fw"></i>
+		</p>
+		<ul class="trophy-row">
+				<li><i class="fa fa-star fa-fw"></i>Superstar</li>
+				<li><i class="fa fa-diamond fa-fw"></i>Diamond in the rough</li>
+				<li><i class="fa fa-shield fa-fw"></i>Defend your position</li>
+				<li><i class="fa fa-id-card-o fa-fw"></i>Bus Driver</li>
+				<li><i class="fa fa-battery fa-fw"></i>Always fully charged</li>
+		</ul>
+		<ul>
+				<li>All your questions #1</li>
+				<li>All your questions #1</li>
+				<li>All your questions #1</li>
+				<li>All your questions #1</li>
+		</ul>
+		<ul>
+				<li>All your answers #1</li>
+				<li>All your answers #1</li>
+				<li>All your answers #1</li>
+				<li>All your answers #1</li>
+		</ul>
+	</div>
 {% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="question-title">LEADERS</h2>
+<ul class="leaderlist">
+	<li class="leaderlist-item">
+		<img src="{{ url_for('static', filename='1.jpeg') }}" class="avatar-img">
+		<p class="avatar-username">Red Ventures</p>
+		<p>Score: 35</p>
+	</li>
+	<li class="leaderlist-item">
+		<img src="{{ url_for('static', filename='2.jpeg') }}" class="avatar-img">
+		<p class="avatar-username">Modernizing Medicine</p>
+		<p>Score: 35</p>
+	</li>
+	<li class="leaderlist-item">
+		<img src="{{ url_for('static', filename='3.jpeg') }}" class="avatar-img">
+		<p class="avatar-username">C3 Marketing</p>
+		<p>Score: 35</p>
+	</li>
+	<li class="leaderlist-item">
+		<img src="{{ url_for('static', filename='4.jpeg') }}" class="avatar-img">
+		<p class="avatar-username">Office Depot</p>
+		<p>Score: 35</p>
+	</li>
+	<li class="leaderlist-item">
+		<img src="{{ url_for('static', filename='5.jpeg') }}" class="avatar-img">
+		<p class="avatar-username">Mr. History</p>
+		<p>Score: 30</p>
+	</li>
+	<li class="leaderlist-item">
+		<img src="{{ url_for('static', filename='1.jpeg') }}" class="avatar-img">
+		<p class="avatar-username">Your Username</p>
+		<p>Score: 28</p>
+	</li>
+</ul>
+
+{% endblock %}
